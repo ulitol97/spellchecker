@@ -7,10 +7,19 @@ set(SRC_DIR "src")
 set(INC_DIR "inc")
 set(SOURCES
         ${SRC_DIR}/main.cpp
-        ${SRC_DIR}/spellchecker/interpreter.cpp
-        ${SRC_DIR}/utils/string_utils.cpp
-        ${INC_DIR}/spellchecker/interpreter.h
-        ${INC_DIR}/utils/string_utils.h
+
+        ${SRC_DIR}/spellchecker/Interpreter.cpp
+        ${SRC_DIR}/utils/StringUtils.cpp
+        ${SRC_DIR}/algorithms/RecursiveChecker.cpp
+        ${SRC_DIR}/algorithms/MatrixChecker.cpp
+        ${SRC_DIR}/algorithms/SingleRowChecker.cpp
+        
+        ${INC_DIR}/spellchecker/Interpreter.h
+        ${INC_DIR}/utils/StringUtils.h
+        ${INC_DIR}/algorithms/SpellChecker.h
+        ${INC_DIR}/algorithms/RecursiveChecker.h
+        ${INC_DIR}/algorithms/MatrixChecker.h
+        ${INC_DIR}/algorithms/SingleRowChecker.h
         )
 
 add_executable(spellchecker ${SOURCES})

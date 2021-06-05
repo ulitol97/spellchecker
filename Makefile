@@ -123,6 +123,87 @@ spellchecker/fast:
 	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/build
 .PHONY : spellchecker/fast
 
+src/algorithms/MatrixChecker.o: src/algorithms/MatrixChecker.cpp.o
+
+.PHONY : src/algorithms/MatrixChecker.o
+
+# target to build an object file
+src/algorithms/MatrixChecker.cpp.o:
+	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/algorithms/MatrixChecker.cpp.o
+.PHONY : src/algorithms/MatrixChecker.cpp.o
+
+src/algorithms/MatrixChecker.i: src/algorithms/MatrixChecker.cpp.i
+
+.PHONY : src/algorithms/MatrixChecker.i
+
+# target to preprocess a source file
+src/algorithms/MatrixChecker.cpp.i:
+	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/algorithms/MatrixChecker.cpp.i
+.PHONY : src/algorithms/MatrixChecker.cpp.i
+
+src/algorithms/MatrixChecker.s: src/algorithms/MatrixChecker.cpp.s
+
+.PHONY : src/algorithms/MatrixChecker.s
+
+# target to generate assembly for a file
+src/algorithms/MatrixChecker.cpp.s:
+	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/algorithms/MatrixChecker.cpp.s
+.PHONY : src/algorithms/MatrixChecker.cpp.s
+
+src/algorithms/RecursiveChecker.o: src/algorithms/RecursiveChecker.cpp.o
+
+.PHONY : src/algorithms/RecursiveChecker.o
+
+# target to build an object file
+src/algorithms/RecursiveChecker.cpp.o:
+	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/algorithms/RecursiveChecker.cpp.o
+.PHONY : src/algorithms/RecursiveChecker.cpp.o
+
+src/algorithms/RecursiveChecker.i: src/algorithms/RecursiveChecker.cpp.i
+
+.PHONY : src/algorithms/RecursiveChecker.i
+
+# target to preprocess a source file
+src/algorithms/RecursiveChecker.cpp.i:
+	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/algorithms/RecursiveChecker.cpp.i
+.PHONY : src/algorithms/RecursiveChecker.cpp.i
+
+src/algorithms/RecursiveChecker.s: src/algorithms/RecursiveChecker.cpp.s
+
+.PHONY : src/algorithms/RecursiveChecker.s
+
+# target to generate assembly for a file
+src/algorithms/RecursiveChecker.cpp.s:
+	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/algorithms/RecursiveChecker.cpp.s
+.PHONY : src/algorithms/RecursiveChecker.cpp.s
+
+src/algorithms/SingleRowChecker.o: src/algorithms/SingleRowChecker.cpp.o
+
+.PHONY : src/algorithms/SingleRowChecker.o
+
+# target to build an object file
+src/algorithms/SingleRowChecker.cpp.o:
+	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/algorithms/SingleRowChecker.cpp.o
+.PHONY : src/algorithms/SingleRowChecker.cpp.o
+
+src/algorithms/SingleRowChecker.i: src/algorithms/SingleRowChecker.cpp.i
+
+.PHONY : src/algorithms/SingleRowChecker.i
+
+# target to preprocess a source file
+src/algorithms/SingleRowChecker.cpp.i:
+	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/algorithms/SingleRowChecker.cpp.i
+.PHONY : src/algorithms/SingleRowChecker.cpp.i
+
+src/algorithms/SingleRowChecker.s: src/algorithms/SingleRowChecker.cpp.s
+
+.PHONY : src/algorithms/SingleRowChecker.s
+
+# target to generate assembly for a file
+src/algorithms/SingleRowChecker.cpp.s:
+	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/algorithms/SingleRowChecker.cpp.s
+.PHONY : src/algorithms/SingleRowChecker.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -150,59 +231,59 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
-src/spellchecker/interpreter.o: src/spellchecker/interpreter.cpp.o
+src/spellchecker/Interpreter.o: src/spellchecker/Interpreter.cpp.o
 
-.PHONY : src/spellchecker/interpreter.o
-
-# target to build an object file
-src/spellchecker/interpreter.cpp.o:
-	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/spellchecker/interpreter.cpp.o
-.PHONY : src/spellchecker/interpreter.cpp.o
-
-src/spellchecker/interpreter.i: src/spellchecker/interpreter.cpp.i
-
-.PHONY : src/spellchecker/interpreter.i
-
-# target to preprocess a source file
-src/spellchecker/interpreter.cpp.i:
-	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/spellchecker/interpreter.cpp.i
-.PHONY : src/spellchecker/interpreter.cpp.i
-
-src/spellchecker/interpreter.s: src/spellchecker/interpreter.cpp.s
-
-.PHONY : src/spellchecker/interpreter.s
-
-# target to generate assembly for a file
-src/spellchecker/interpreter.cpp.s:
-	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/spellchecker/interpreter.cpp.s
-.PHONY : src/spellchecker/interpreter.cpp.s
-
-src/utils/string_utils.o: src/utils/string_utils.cpp.o
-
-.PHONY : src/utils/string_utils.o
+.PHONY : src/spellchecker/Interpreter.o
 
 # target to build an object file
-src/utils/string_utils.cpp.o:
-	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/utils/string_utils.cpp.o
-.PHONY : src/utils/string_utils.cpp.o
+src/spellchecker/Interpreter.cpp.o:
+	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/spellchecker/Interpreter.cpp.o
+.PHONY : src/spellchecker/Interpreter.cpp.o
 
-src/utils/string_utils.i: src/utils/string_utils.cpp.i
+src/spellchecker/Interpreter.i: src/spellchecker/Interpreter.cpp.i
 
-.PHONY : src/utils/string_utils.i
+.PHONY : src/spellchecker/Interpreter.i
 
 # target to preprocess a source file
-src/utils/string_utils.cpp.i:
-	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/utils/string_utils.cpp.i
-.PHONY : src/utils/string_utils.cpp.i
+src/spellchecker/Interpreter.cpp.i:
+	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/spellchecker/Interpreter.cpp.i
+.PHONY : src/spellchecker/Interpreter.cpp.i
 
-src/utils/string_utils.s: src/utils/string_utils.cpp.s
+src/spellchecker/Interpreter.s: src/spellchecker/Interpreter.cpp.s
 
-.PHONY : src/utils/string_utils.s
+.PHONY : src/spellchecker/Interpreter.s
 
 # target to generate assembly for a file
-src/utils/string_utils.cpp.s:
-	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/utils/string_utils.cpp.s
-.PHONY : src/utils/string_utils.cpp.s
+src/spellchecker/Interpreter.cpp.s:
+	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/spellchecker/Interpreter.cpp.s
+.PHONY : src/spellchecker/Interpreter.cpp.s
+
+src/utils/StringUtils.o: src/utils/StringUtils.cpp.o
+
+.PHONY : src/utils/StringUtils.o
+
+# target to build an object file
+src/utils/StringUtils.cpp.o:
+	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/utils/StringUtils.cpp.o
+.PHONY : src/utils/StringUtils.cpp.o
+
+src/utils/StringUtils.i: src/utils/StringUtils.cpp.i
+
+.PHONY : src/utils/StringUtils.i
+
+# target to preprocess a source file
+src/utils/StringUtils.cpp.i:
+	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/utils/StringUtils.cpp.i
+.PHONY : src/utils/StringUtils.cpp.i
+
+src/utils/StringUtils.s: src/utils/StringUtils.cpp.s
+
+.PHONY : src/utils/StringUtils.s
+
+# target to generate assembly for a file
+src/utils/StringUtils.cpp.s:
+	$(MAKE) -f CMakeFiles/spellchecker.dir/build.make CMakeFiles/spellchecker.dir/src/utils/StringUtils.cpp.s
+.PHONY : src/utils/StringUtils.cpp.s
 
 # Help Target
 help:
@@ -213,15 +294,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... spellchecker"
+	@echo "... src/algorithms/MatrixChecker.o"
+	@echo "... src/algorithms/MatrixChecker.i"
+	@echo "... src/algorithms/MatrixChecker.s"
+	@echo "... src/algorithms/RecursiveChecker.o"
+	@echo "... src/algorithms/RecursiveChecker.i"
+	@echo "... src/algorithms/RecursiveChecker.s"
+	@echo "... src/algorithms/SingleRowChecker.o"
+	@echo "... src/algorithms/SingleRowChecker.i"
+	@echo "... src/algorithms/SingleRowChecker.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/spellchecker/interpreter.o"
-	@echo "... src/spellchecker/interpreter.i"
-	@echo "... src/spellchecker/interpreter.s"
-	@echo "... src/utils/string_utils.o"
-	@echo "... src/utils/string_utils.i"
-	@echo "... src/utils/string_utils.s"
+	@echo "... src/spellchecker/Interpreter.o"
+	@echo "... src/spellchecker/Interpreter.i"
+	@echo "... src/spellchecker/Interpreter.s"
+	@echo "... src/utils/StringUtils.o"
+	@echo "... src/utils/StringUtils.i"
+	@echo "... src/utils/StringUtils.s"
 .PHONY : help
 
 
