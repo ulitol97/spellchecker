@@ -27,7 +27,7 @@ private:
 
     bool ValidateInput(std::string &input);
 
-    long ComputeResults(std::string &word);
+    double ComputeResults(std::string &word);
 };
 
 #endif //LEVENSHTEIN_SPELLCHECKER_INTERPRETER_H

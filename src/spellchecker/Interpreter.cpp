@@ -8,6 +8,7 @@
 #include <fstream>
 #include <filesystem>
 #include <queue>
+#include <chrono>
 #include "utils/Order.h"
 #include "utils/StringUtils.h"
 #include "spellchecker/Interpreter.h"
@@ -61,9 +62,9 @@ void Interpreter::LoadDictionary(std::vector<std::string> &dict) {
 SpellChecker *Interpreter::AskAlgorithm() const {
     std::cout <<
               "\nThe edit distance between words can be computed in 3 ways:" << "\n" <<
-              "\t1 -> " << "Levenshtein recursive algorithm (very slow - O(n^3))" << "\n" <<
-              "\t2 -> " << "Wagner–Fischer algorithm - full matrix (fast - O(n^2))" << "\n" <<
-              "\t3 -> " << "Wagner–Fischer algorithm - single row  (fastest - O(n^2))" << "\n" <<
+              "\t1 -> " << "Levenshtein recursive algorithm (very slow)" << "\n" <<
+              "\t2 -> " << "Wagner–Fischer algorithm - full matrix (fast)" << "\n" <<
+              "\t3 -> " << "Wagner–Fischer algorithm - single row  (fastest)" << "\n" <<
               std::endl;
 
     std::string input;
@@ -118,19 +119,22 @@ void Interpreter::AskInput() {
 }
 
 // Run the algorithm and eventually print the results.
-long Interpreter::ComputeResults(std::string &word) {
+double Interpreter::ComputeResults(std::string &word) {
 
-    // Profiling elapsed time
-    long startTime = clock();
+    // Record start time
+    auto startTime = std::chrono::high_resolution_clock::now();
+
 
     // Compute results, storing them in a priority queue
     std::priority_queue<Order> queue;
     spellChecker->GetClosestWords(queue, word, dictionary);
 
-    long elapsedTime = clock() - startTime;
+    // Record end time
+    auto endTime = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> elapsedTime = endTime - startTime;
 
     // Print results
-    std::cout << "RESULTS (" << (float) elapsedTime / CLOCKS_PER_SEC << " seconds)" << ":\n";
+    std::cout << "RESULTS (" << elapsedTime.count() << " seconds)" << ":\n";
     for (int i = 1; i <= nSuggestions; i++) {
         if (queue.empty()) break;
 
@@ -143,7 +147,7 @@ long Interpreter::ComputeResults(std::string &word) {
     }
     std::cout << std::endl;
 
-    return elapsedTime;
+    return elapsedTime.count();
 }
 
 // Validate user input to make sure if conforms to the program needs

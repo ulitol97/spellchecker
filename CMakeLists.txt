@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.15)
 project(spellchecker)
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_BUILD_TYPE  "Release")
+# added -fopenmp
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp")
 include_directories(src inc)
 
 set(SRC_DIR "src")
@@ -23,6 +26,6 @@ set(SOURCES
         ${INC_DIR}/algorithms/RecursiveChecker.h
         ${INC_DIR}/algorithms/MatrixChecker.h
         ${INC_DIR}/algorithms/SingleRowChecker.h
-        inc/utils/Order.h)
+        )
 
 add_executable(spellchecker ${SOURCES})
