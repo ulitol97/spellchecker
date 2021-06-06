@@ -1,12 +1,17 @@
 #ifndef SPELLCHECKER_RECURSIVECHECKER_H
 #define SPELLCHECKER_RECURSIVECHECKER_H
 
+#include <vector>
 #include "SpellChecker.h"
 
 class RecursiveChecker : public SpellChecker {
 public:
-    int getEditDistance(std::string $str1, std::string $str2) override;
+    RecursiveChecker() = default;
 
+    explicit RecursiveChecker(int nWords) : SpellChecker(nWords) {};;
+
+private:
+    int getEditDistance(const char *$word1, const char *$word2) override;
 };
 
 

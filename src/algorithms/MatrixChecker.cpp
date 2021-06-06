@@ -1,6 +1,6 @@
-#include "algorithms/SpellChecker.h"
+#include <iostream>
 #include "algorithms/MatrixChecker.h"
 
-int MatrixChecker::getEditDistance(std::string $str1, std::string $str2) {
+int MatrixChecker::getEditDistance(const char *$word1, const char *$word2) {
     return 0;
 }

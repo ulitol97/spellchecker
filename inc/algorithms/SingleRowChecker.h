@@ -1,11 +1,17 @@
 #ifndef SPELLCHECKER_SINGLEROWCHECKER_H
 #define SPELLCHECKER_SINGLEROWCHECKER_H
 
+#include <vector>
 #include "SpellChecker.h"
 
 class SingleRowChecker : public SpellChecker {
 public:
-    int getEditDistance(std::string $str1, std::string $str2) override;
+    SingleRowChecker() = default;
+
+    explicit SingleRowChecker(int nWords) : SpellChecker(nWords) {};
+
+private:
+    int getEditDistance(const char *$word1, const char *$word2) override;
 
 };
 
