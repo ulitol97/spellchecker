@@ -6,12 +6,10 @@
 
 class RecursiveChecker : public SpellChecker {
 public:
-    RecursiveChecker() = default;
-
-    explicit RecursiveChecker(int nWords) : SpellChecker(nWords) {};;
+    RecursiveChecker() : SpellChecker() {};
 
 private:
-    int getEditDistance(const char *$word1, const char *$word2) override;
+    int getEditDistance(const char *word1, const char *word2) override;
 };
 
 

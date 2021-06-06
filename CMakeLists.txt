@@ -18,6 +18,7 @@ set(SOURCES
         ${INC_DIR}/spellchecker/Interpreter.h
         ${INC_DIR}/utils/StringUtils.h
         ${INC_DIR}/utils/Order.h
+        ${INC_DIR}/utils/Matrix.h
         ${INC_DIR}/algorithms/SpellChecker.h
         ${INC_DIR}/algorithms/RecursiveChecker.h
         ${INC_DIR}/algorithms/MatrixChecker.h

@@ -5,11 +5,11 @@
 #include <iostream>
 #include <string>
 #include <regex>
-#include <utils/StringUtils.h>
 #include <fstream>
 #include <filesystem>
 #include <queue>
-#include <utils/Order.h>
+#include "utils/Order.h"
+#include "utils/StringUtils.h"
 #include "spellchecker/Interpreter.h"
 #include "algorithms/SpellChecker.h"
 #include "algorithms/RecursiveChecker.h"
@@ -18,7 +18,7 @@
 
 // Create and Interpreter object and try to load the words in the dictionary
 Interpreter::Interpreter(std::string &dictionaryFile, int nSuggestions) {
-    this->nSuggestions = nSuggestions;
+    this->nSuggestions = std::min(std::max(SpellChecker::minSuggestions, nSuggestions), SpellChecker::maxSuggestions);
     this->dictionaryFile = dictionaryFile; // File with the dictionary
     this->dictionary = std::vector<std::string>{}; // Dictionary data
     LoadDictionary(dictionary);
@@ -52,7 +52,7 @@ void Interpreter::LoadDictionary(std::vector<std::string> &dict) {
     file.close();
 
     if (dict.empty()) {
-        std::cerr << "FAILURE: empty dict" << std::endl;
+        std::cerr << "FAILURE: empty dictionary" << std::endl;
         exit(102);
     } else std::cout << "SUCCESS (read " << dict.size() << " words)" << std::endl;
 }
@@ -79,13 +79,13 @@ SpellChecker *Interpreter::AskAlgorithm() const {
         }
 
         if (option == '1') {
-            auto *checker = new RecursiveChecker(nSuggestions);
+            auto *checker = new RecursiveChecker();
             return checker;
         } else if (option == '2') {
-            auto *checker = new MatrixChecker(nSuggestions);
+            auto *checker = new MatrixChecker();
             return checker;
         } else {
-            auto *checker = new SingleRowChecker(nSuggestions);
+            auto *checker = new SingleRowChecker();
             return checker;
         }
     }
@@ -131,11 +131,13 @@ long Interpreter::ComputeResults(std::string &word) {
 
     // Print results
     std::cout << "RESULTS (" << (float) elapsedTime / CLOCKS_PER_SEC << " seconds)" << ":\n";
-    for (int i = 1; i <= nSuggestions; ++i) {
+    for (int i = 1; i <= nSuggestions; i++) {
         if (queue.empty()) break;
 
         Order o = queue.top();
-        std::cout << "\t" << i << ". " << dictionary[o.index] << "\n";
+        std::cout << "\t" << i << ". " << dictionary[o.index];
+        if (strcmp(word.data(), dictionary[o.index].data()) == 0) std::cout << " <= User input";
+        std::cout << "\n";
 
         queue.pop();
     }
@@ -154,11 +156,12 @@ bool Interpreter::ValidateInput(std::string &input) {
 
     // One word only
     if (StringUtils::CountWords(input) != 1) {
-        std::cout << "Invalid input: 1 word only" << std::endl;
+        std::cout << "Invalid input: enter only 1 word" << std::endl;
         return false;
     }
 
-    if (!std::regex_match(input, std::regex("([a-z]+)"))) {
+    if (!std::regex_match(input, std::regex(
+            "^[a-zA-ZÀ-ÿ\\u00f1\\u00d1]+[a-zA-ZÀ-ÿ\\u00f1\\u00d1\\u0302]*+$"))) {
         std::cout << "Invalid input: only letters are allowed" << std::endl;
         return false;
     }

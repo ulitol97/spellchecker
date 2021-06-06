@@ -1,9 +1,8 @@
 #include <iostream>
 #include <cstring>
 #include <csignal>
-#include <algorithm>
 #include "spellchecker/Interpreter.h"
-#include <utils/StringUtils.h>
+#include "algorithms/SpellChecker.h"
 
 
 const std::string programName = "spellchecker";
@@ -38,7 +37,9 @@ void PrintHelp() {
               "\t"
               << "-d | --dict          Relative path of the dictionary to be used for spellchecking (default is dictionary.txt)"
               << "\n" <<
-              "\t" << "-s | --suggestions   Number of suggestions made by the spellchecker (1-20, default is 5)" << "\n"
+              "\t" << "-s | --suggestions   Number of suggestions made by the spellchecker ("
+              << SpellChecker::minSuggestions << " - " << SpellChecker::maxSuggestions << ", default is "
+              << SpellChecker::defaultSuggestions << ")" << "\n"
               <<
               std::endl;
 }
@@ -64,7 +65,16 @@ void ParseArguments(int argc, char *argv[]) {
             }
                 // Suggestions
             else if (strcmp(argv[argIndex], "-s") == 0 || strcmp(argv[argIndex], "--suggestions") == 0) {
-                nSuggestions = std::stoi(argv[argIndex + 1]);
+                try {
+                    nSuggestions = std::stoi(argv[argIndex + 1]);
+                }
+                catch (...) {
+                    std::cout << "Invalid value \"" << argv[argIndex + 1] << R"(" for argument "suggestions")"
+                              << std::endl;
+                    PrintHelp();
+                    exit(105);
+                }
+
                 argIndex += 2;
             } else {
                 std::cout << "Bad usage:" << std::endl;

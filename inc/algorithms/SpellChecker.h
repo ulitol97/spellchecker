@@ -10,20 +10,14 @@ class SpellChecker {
 public:
     SpellChecker() = default;
 
-    static const int defaultSuggestions = 5;
-
-    explicit SpellChecker(int nSuggestions) {
-        this->nSuggestions = std::min(std::max(1, nSuggestions), maxSuggestions);
-    };
+    inline static const int defaultSuggestions = 5;
+    inline static const int minSuggestions = 1;
+    inline static const int maxSuggestions = 20;
 
     virtual ~SpellChecker() = default;
 
     void GetClosestWords(std::priority_queue<Order> &results, const std::string &word,
                          const std::vector<std::string> &dictionary);
-
-protected:
-    const int maxSuggestions = 20;
-    int nSuggestions = defaultSuggestions;
 
 private:
     virtual int getEditDistance(const char *$word1, const char *$word2) = 0;

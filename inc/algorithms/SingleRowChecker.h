@@ -6,12 +6,10 @@
 
 class SingleRowChecker : public SpellChecker {
 public:
-    SingleRowChecker() = default;
-
-    explicit SingleRowChecker(int nWords) : SpellChecker(nWords) {};
+    SingleRowChecker() : SpellChecker() {};
 
 private:
-    int getEditDistance(const char *$word1, const char *$word2) override;
+    int getEditDistance(const char *word1, const char *word2) override;
 
 };
 

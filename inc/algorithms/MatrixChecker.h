@@ -6,12 +6,10 @@
 
 class MatrixChecker : public SpellChecker {
 public:
-    MatrixChecker() = default;
-
-    explicit MatrixChecker(int nWords) : SpellChecker(nWords) {};;
+    MatrixChecker() : SpellChecker() {};
     
 private:
-    int getEditDistance(const char *$word1, const char *$word2) override;
+    int getEditDistance(const char *word1, const char *word2) override;
 };
 
 

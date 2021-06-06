@@ -43,11 +43,11 @@ unsigned StringUtils::CountWords(std::string &str) {
             // If next character is not a separator and state is OUT, then state = IN and increment count
         else if (state == COUNTING_STATES::OUT) {
             state = COUNTING_STATES::IN;
-            ++wordCount;
+            wordCount++;
         }
 
         // Move to next character
-        ++chars;
+        chars++;
     }
 
     return wordCount;
